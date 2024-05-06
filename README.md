@@ -1,4 +1,4 @@
-| **Projeto** | _Site para Barbearias_ |
+| **Projeto** | __ |
 | --- | --- |
 | **Desenvolvedores** | Jabes e Vinicius |
 | **Status** | `Em desenvolvimento` |
