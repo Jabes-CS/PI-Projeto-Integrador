@@ -1,29 +1,32 @@
-function initMap() {
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 12,
-        center: {lat: -23.5505, lng: -46.6333},
-    });
 
-    // Adicione um marcador para a filial em São Paulo
-    var saoPauloMarker = new google.maps.Marker({
-        position: {lat: -23.5505, lng: -46.6333},
-        map: map,
-        title: 'Filial em São Paulo',
-        icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png' // Ícone personalizado para filiais
-    });
+var map = L.map('map').setView([51.505, -0.09], 1);
 
-    // Informações sobre a filial em São Paulo
-    var saoPauloInfo = '<div><h2>Filial em São Paulo</h2>' +
-                       '<p>Endereço IP: 192.168.0.21 até 192.168.0.40</p>' +
-                       '<p>Máscara de Sub-rede: 255.255.255.0</p></div>';
+var myIcon = L.icon({
+    iconUrl: 'blue_Icons/wirelessRouter.jpg',
+    iconSize: [38, 60],
+    iconAnchor: [22, 94],
+    popupAnchor: [-3, -76],
+});
 
-    // Cria a janela de informação para exibir os detalhes quando o marcador é clicado
-    var saoPauloInfoWindow = new google.maps.InfoWindow({
-        content: saoPauloInfo
-    });
 
-    // Adiciona um evento de clique ao marcador
-    saoPauloMarker.addListener('click', function() {
-        saoPauloInfoWindow.open(map, saoPauloMarker);
-    });
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+L.marker([51.5, -0.09], {icon: myIcon}).addTo(map)
+    .bindPopup('A pretty CSS popup.<br> Easily customizable.')
+    .openPopup();
+
+L.marker([-22.8216, -47.2664], {icon: myIcon}).addTo(map)
+    .bindPopup('Sumaré')
+    .openPopup();
+
+/*Sugestão do chatGPT para quando tirar o zoom do mapa, o ícone mude de tamanho tbm, mas não funcioou
+function updateMarkerIcon() {
+    var zoom = map.getZoom();
+    var newSize = initialSize * Math.pow(1.2, zoom - 1); // Ajuste a fórmula conforme necessário
+    marker.setIcon(createIcon(newSize));
 }
+
+map.on('zoomed', updateMarkerIcon);
+*/
