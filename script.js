@@ -1,32 +1,39 @@
 
-var map = L.map('map').setView([51.505, -0.09], 1);
+var map = L.map('map', {
+    maxBounds: [
+        [85, -150],  // Coordenadas sudoeste do retângulo (latitude, longitude)
+        [-85, 180]   // Coordenadas nordeste do retângulo (latitude, longitude)
+    ],
+    minZoom: 2.4,
+    maxBoundsViscosity: 1,  // Controla a "elasticidade" do limite (1.0 significa sem elasticidade)
+}).setView([28, -0.00], 1);
 
 var myIcon = L.icon({
-    iconUrl: 'blue_Icons/wirelessRouter.jpg',
-    iconSize: [38, 60],
-    iconAnchor: [22, 94],
-    popupAnchor: [-3, -76],
+    iconUrl: 'blue_Icons/prédio.jpg',
+    iconSize: [28, 45],
 });
-
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-L.marker([51.5, -0.09], {icon: myIcon}).addTo(map)
-    .bindPopup('A pretty CSS popup.<br> Easily customizable.')
-    .openPopup();
+L.marker([-9.655742, -35.698802], {icon: myIcon}).addTo(map)
+    .bindPopup('<b>Filial de Maceió, Brasil.</b><br>Ips válidos:<br>192.168.0.21<br>192.168.0.22<br>192.168.0.23<br>192.168.0.24<br>Veja o diagrama de rede completo aqui.')
 
-L.marker([-22.8216, -47.2664], {icon: myIcon}).addTo(map)
-    .bindPopup('Sumaré')
-    .openPopup();
+L.marker([13.701039, -89.222834], {icon: myIcon}).addTo(map)
+        .bindPopup('<b>Filial de São Salvador, El Salvador.</b><br>Ips válidos:<br>192.168.0.25<br>192.168.0.26<br>192.168.0.27<br>192.168.0.28<br><br>Veja o diagrama de rede completo aqui.')
 
-/*Sugestão do chatGPT para quando tirar o zoom do mapa, o ícone mude de tamanho tbm, mas não funcioou
-function updateMarkerIcon() {
-    var zoom = map.getZoom();
-    var newSize = initialSize * Math.pow(1.2, zoom - 1); // Ajuste a fórmula conforme necessário
-    marker.setIcon(createIcon(newSize));
-}
+L.marker([32.158819, 34.795956], {icon: myIcon}).addTo(map)
+    .bindPopup('<b>Filial de Telavive, Israel.<br>Ips válidos:<br></b>192.168.0.29<br>192.168.0.30<br>192.168.0.31<br>192.168.0.32<br>Veja o diagrama de rede completo aqui.')
 
-map.on('zoomed', updateMarkerIcon);
-*/
+L.marker([1.365430, 103.829895], {icon: myIcon}).addTo(map)
+        .bindPopup('<b>Filial de Bishan, Singapura.</b><br>Ips válidos:<br>192.168.0.33<br>192.168.0.34<br>192.168.0.35<br>192.168.0.36<br>Veja o diagrama de rede completo aqui.')
+
+L.marker([25.044153, 121.506729], {icon: myIcon}).addTo(map)
+    .bindPopup('<b>Filial de Taipei, Taiwan.</b><br>Ips válidos:<br>192.168.0.37<br>192.168.0.38<br>192.168.0.39<br>192.168.0.40<br>Veja o diagrama de rede completo aqui.')
+
+    
+    
+    
+    
+    
