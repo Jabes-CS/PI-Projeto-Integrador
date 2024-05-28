@@ -12,14 +12,32 @@
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""></script>
     <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center; /* Alinha o conteúdo horizontalmente */
+            align-items: center; /* Alinha o conteúdo verticalmente */
+            height: 100%;
+            background-color: black; /* Define o fundo preto para a página inteira */
+        }
+        
         #map {
-        height: 600px; 
-        width: 100%;
+            height: 600px; 
+            width: 100%;
+            max-width: 1300px; /* Defina a largura máxima do mapa conforme necessário */
+            background-color: white; /* Adiciona o fundo branco ao contêiner do mapa */
         }
     </style>
 </head>
 <body>
-    <div id="map"></div>
+    <div class="container">
+        <div id="map"></div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
