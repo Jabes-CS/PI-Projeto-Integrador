@@ -9,7 +9,7 @@ var map = L.map('map', {
 }).setView([28, -0.00], 1);
 
 var myIcon = L.icon({
-    iconUrl: 'blue_Icons/prédio.jpg',
+    iconUrl: 'prédioAzul.png',
     iconSize: [28, 45],
 });
 
