@@ -13,30 +13,104 @@
     crossorigin=""></script>
     <style>
         body, html {
-            height: 100%;
             margin: 0;
             padding: 0;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
         }
-        
-        .container {
+
+        .title {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 24px;
+        }
+
+        .participante {
+            text-align: left;
+            margin-left: 20px;
+            font-size: 18px;
+        }
+
+        .map-container {
             display: flex;
-            justify-content: center; /* Alinha o conteúdo horizontalmente */
-            align-items: center; /* Alinha o conteúdo verticalmente */
-            height: 100%;
-            background-color: black; /* Define o fundo preto para a página inteira */
+            justify-content: center;
+            background-color: black;
         }
-        
+
         #map {
             height: 600px; 
             width: 100%;
             max-width: 1300px; /* Defina a largura máxima do mapa conforme necessário */
             background-color: white; /* Adiciona o fundo branco ao contêiner do mapa */
         }
+
+        .content {
+            max-width: 1300px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .content ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+    
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="title">Projeto Integrador</div>
+    <div class="Participante">
+        <p>Participantes</p>
+        <ul>
+            <li>Nome: Jabes Candido da Silva - RA: 180740</li>
+        </ul>
+        <ul>
+            <li>Nome: Vinicius Vanderlei Santana - RA: 180244</li>
+        </ul>
+    </div>
+    <div class="map-container">
         <div id="map"></div>
+    </div>
+    <div class="content">
+        <p>Filial de Maceió, Brasil</p>
+        <ul>
+            <li>192.168.0.22</li>
+            <li>192.168.0.23</li>
+            <li>192.168.0.24</li>
+        </ul>
+
+        <p>Filial de São Salvador, El Salvador</p>
+        <ul>
+            <li>192.168.0.25</li>
+            <li>192.168.0.26</li>
+            <li>192.168.0.27</li>
+            <li>192.168.0.28</li>
+        </ul>
+
+        <p>Filial de Telavive, Israel</p>
+        <ul>
+            <li>192.168.0.29</li>
+            <li>192.168.0.30</li>
+            <li>192.168.0.31</li>
+            <li>192.168.0.32</li>
+        </ul>
+
+        <p>Filial de Bishan, Singapura</p>
+        <ul>
+            <li>192.168.0.33</li>
+            <li>192.168.0.34</li>
+            <li>192.168.0.35</li>
+            <li>192.168.0.36</li>
+        </ul>
+
+        <p>Filial de Taipei, Taiwan</p>
+        <ul>
+            <li>192.168.0.37</li>
+            <li>192.168.0.38</li>
+            <li>192.168.0.39</li>
+        </ul>
+
     </div>
     <script src="script.js"></script>
 </body>
